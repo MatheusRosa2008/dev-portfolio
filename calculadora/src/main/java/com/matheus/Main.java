@@ -20,13 +20,16 @@ public class Main {
             (0)SAIR.""".stripIndent(),
 
         mensagemPrimeiroNumero = """
-        DIGITE O PRIMEIRO NÚMERO: """.stripIndent(),
+            DIGITE O PRIMEIRO NÚMERO: """.stripIndent(),
 
         mensagemSegundoNumero = """
-        DIGITE O SEGUNDO NÚMERO: """.stripIndent(),
+            DIGITE O SEGUNDO NÚMERO: """.stripIndent(),
 
         respostaFinal = """
-        RESULTADO: """.stripIndent(); 
+            RESULTADO: """.stripIndent(),
+        
+        desejaContinuar = """
+                DESEJA CONTINUAR? """.stripIndent();
 
         do{
             System.out.println(menu);
@@ -35,53 +38,115 @@ public class Main {
 
             if(escolha < 0 || escolha > 4){
                 System.out.println("ESCOLHA INVÁLIDA.");
-                System.out.println("DESEJA CONTINUAR O PROGRAMA?");
-                System.out.println("(0) NÃO || (1) SIM");
-                continuar = leitor.nextInt();
+                continue;
+            }
+            if(escolha == 0){
+                System.out.println("Saindo...");
+                break;
             }   
-        }while(escolha < 0 || escolha > 4 && escolha == 0); 
         
-        switch (escolha) {
-            case 1:
-                System.out.print(mensagemPrimeiroNumero);
-                numero[0] = leitor.nextDouble();
-                System.out.print(mensagemSegundoNumero);
-                numero[1] = leitor.nextDouble();
+            switch (escolha) {
+                case 1:
+                    System.out.print(mensagemPrimeiroNumero);
+                    numero[0] = leitor.nextDouble();
+                    System.out.print(mensagemSegundoNumero);
+                    numero[1] = leitor.nextDouble();
 
-                resultado = numero[0] + numero[1];
+                    resultado = numero[0] + numero[1];
 
-                System.out.println(respostaFinal + resultado);
-                break;
-            case 2:
-                System.out.print(mensagemPrimeiroNumero);
-                numero[0] = leitor.nextDouble();
-                System.out.print(mensagemSegundoNumero);
-                numero[1] = leitor.nextDouble();
-                
-                resultado = numero[0] - numero[1];
+                    System.out.println(respostaFinal + resultado);
 
-                System.out.print(respostaFinal + resultado);
-                break;
-            case 3:
-                System.out.print(mensagemPrimeiroNumero);
-                numero[0] = leitor.nextDouble();
-                System.out.print(mensagemSegundoNumero);
-                numero[1] = leitor.nextDouble();
-                
-                resultado = numero[0] / numero[1];
+                    System.out.println(desejaContinuar);
+                    System.out.println("(0) NÃO || (1) SIM");
+                    System.out.print("DIGITE: ");
+                    continuar = leitor.nextInt();
 
-                System.out.print(respostaFinal + resultado);
-                break;
-            case 4:
-                System.out.print(mensagemPrimeiroNumero);
-                numero[0] = leitor.nextDouble();
-                System.out.print(mensagemSegundoNumero);
-                numero[1] = leitor.nextDouble();
-                
-                resultado = numero[0] * numero[1];
+                    if(continuar < 0 || continuar > 1){
+                        System.out.println("RESPOSTA INVÁLIDA");
+                        break;
+                    } else if (continuar == 1){
+                        System.out.println("CONTINUANDO O PROGRAMA...");
+                        break;
+                    } else {
+                        continuar = 0;
+                        break;
+                    }
+                case 2:
+                    System.out.print(mensagemPrimeiroNumero);
+                    numero[0] = leitor.nextDouble();
+                    System.out.print(mensagemSegundoNumero);
+                    numero[1] = leitor.nextDouble();
+                    
+                    resultado = numero[0] - numero[1];
 
-                System.out.print(respostaFinal + resultado);
-                break;
-        }
+                    System.out.println(respostaFinal + resultado);
+
+                    System.out.println(desejaContinuar);
+                    System.out.println("(0) NÃO || (1) SIM");
+                    System.out.print("DIGITE: ");
+                    continuar = leitor.nextInt();
+
+                    if(continuar < 0 || continuar > 1){
+                        System.out.println("RESPOSTA INVÁLIDA");
+                        break;
+                    } else if (continuar == 1){
+                        System.out.println("CONTINUANDO O PROGRAMA...");
+                        break;
+                    } else {
+                        continuar = 0;
+                        break;
+                    }
+                case 3:
+                    System.out.print(mensagemPrimeiroNumero);
+                    numero[0] = leitor.nextDouble();
+                    System.out.print(mensagemSegundoNumero);
+                    numero[1] = leitor.nextDouble();
+                    
+                    resultado = numero[0] / numero[1];
+
+                    System.out.println(respostaFinal + resultado);
+
+                    System.out.println(desejaContinuar);
+                    System.out.println("(0) NÃO || (1) SIM");
+                    System.out.print("DIGITE: ");
+                    continuar = leitor.nextInt();
+
+                    if(continuar < 0 || continuar > 1){
+                        System.out.println("RESPOSTA INVÁLIDA");
+                        break;
+                    } else if (continuar == 1){
+                        System.out.println("CONTINUANDO O PROGRAMA...");
+                        break;
+                    } else {
+                        continuar = 0;
+                        break;
+                    }
+                case 4:
+                    System.out.print(mensagemPrimeiroNumero);
+                    numero[0] = leitor.nextDouble();
+                    System.out.print(mensagemSegundoNumero);
+                    numero[1] = leitor.nextDouble();
+                    
+                    resultado = numero[0] * numero[1];
+
+                    System.out.println(respostaFinal + resultado);
+
+                    System.out.println(desejaContinuar);
+                    System.out.println("(0) NÃO || (1) SIM");
+                    System.out.print("DIGITE: ");
+                    continuar = leitor.nextInt();
+
+                    if(continuar < 0 || continuar > 1){
+                        System.out.println("RESPOSTA INVÁLIDA");
+                        break;
+                    } else if (continuar == 1){
+                        System.out.println("CONTINUANDO O PROGRAMA...");
+                        break;
+                    } else {
+                        continuar = 0;
+                        break;
+                    }  
+            }
+        }while(continuar != 0);    
     }
 }
